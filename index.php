@@ -8,6 +8,7 @@
 
     <!-- Bootstrap -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -16,6 +17,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     
+
     
   </head>
   <body>
@@ -38,9 +40,12 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <form class="navbar-form navbar-right" role="search">
         <div class="input-group">
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" data-toggle="dropdown" id="search_input">
+            <ul class="dropdown-menu" role="menu" aria-labelledby="searchmenu">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+            </ul>
             <span class="input-group-btn">
-                <button class="btn btn-default" type="button">
+                <button class="btn btn-default" type="button" id="search_button">
                     <span class="glyphicon glyphicon-search"></span>
                 </button>
             </span>
@@ -50,11 +55,21 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-      
+<div class="container">
+    <div class="master row">
+        <div class="col-md-2">1</div>
+        <div class="col-md-2">2</div>
+        <div class="col-md-2">3</div>
+        <div class="col-md-2">4</div>
+        <div class="col-md-2">5</div>
+        <div class="col-md-2">6</div>
+    </div>
+</div>      
       
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="main.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
   </body>
 </html>
