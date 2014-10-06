@@ -57,6 +57,14 @@
 
 <div class="container">
     <div class="master row">
+        <div id="1" class="col-md-2">1</div>
+        <div id="2" class="col-md-2">2</div>
+        <div id="3" class="col-md-2">3</div>
+        <div id="4" class="col-md-2">4</div>
+        <div id="5" class="col-md-2">5</div>
+        <div id="6" class="col-md-2">6</div>
+    </div>
+    <div class="master row">
         <div class="col-md-2">1</div>
         <div class="col-md-2">2</div>
         <div class="col-md-2">3</div>
