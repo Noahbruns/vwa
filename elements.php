@@ -10,14 +10,12 @@ if (!$link) {
 
 mysql_select_db($db);
 
-$result=mysql_query("SELECT * FROM ".$table." WHERE 
-".$id_column." LIKE '".$_GET["q"]."%' OR 
-".$columns." LIKE '".$_GET["q"]."%'");
+$result=mysql_query("SELECT * FROM ".$table);
 
 while($row=mysql_fetch_array($result, MYSQL_ASSOC)){
-    echo $row[$id_column].";";
+    echo "<div id='".$row[$id_column]."' class='col-md-2'>".$row[$columns]."</div>";
+    //echo $row[$columns];
 }
-
 
 mysql_close($link);
 ?>

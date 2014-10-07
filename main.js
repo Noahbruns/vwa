@@ -1,6 +1,8 @@
 $("#search_button").click(function(){alert("hallo");});
 
-$("#search_input").keyup(function(e){
+id=Array(1,2,3,4,5,6,7);
+
+$("#search_input").keyup(function(){
     $.ajax({
         url: "search.php?q="+$("#search_input").val(),
     })
@@ -8,10 +10,12 @@ $("#search_input").keyup(function(e){
         if(html=="MYSQL_ERROR"){
             alert("MYSQL_ERROR");
         }
+        id.forEach(function(a){
+                $("#"+a).css('display','none');
+        });
         arr=html.split(";");
         arr.forEach(function(i){
-            $("#"+i).css('background-color','red')
-            
+            $("#"+i).css('display','inline');
         });
     });
     
