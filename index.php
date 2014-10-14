@@ -39,17 +39,17 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <form class="navbar-form navbar-right" role="search">
-        <div class="input-group">
-            <input type="text" class="form-control" data-toggle="dropdown" id="search_input">
-            <ul class="dropdown-menu" role="menu" aria-labelledby="searchmenu">
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-            </ul>
-            <span class="input-group-btn">
-                <button class="btn btn-default" type="button" id="search_button">
-                    <span class="glyphicon glyphicon-search"></span>
+          <div class="input-group">
+            <input type="text" class="form-control" id="search_input">
+            <div class="input-group-btn">
+                <button id="searchbutton" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <span class="glyphicon glyphicon-search"></span>
                 </button>
-            </span>
-        </div><!-- /input-group -->
+                <ul class="dropdown-menu" role="menu" aria-labelledby="searchmenu">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+                </ul>
+            </div>
+          </div>
       </form>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

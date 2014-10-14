@@ -20,4 +20,5 @@ $("#search_input").keyup(function(){
     });
     
     $(".dropdown-menu li a").text($("#search_input").val());
+    $("#searchbutton").dropdown('show');
 });

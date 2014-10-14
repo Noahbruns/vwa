@@ -12,7 +12,7 @@ mysql_select_db($db);
 
 $result=mysql_query("SELECT * FROM ".$table." WHERE 
 ".$id_column." LIKE '".$_GET["q"]."%' OR 
-".$columns." LIKE '".$_GET["q"]."%'");
+".$columns." LIKE '%".$_GET["q"]."%'");
 
 while($row=mysql_fetch_array($result, MYSQL_ASSOC)){
     echo $row[$id_column].";";
