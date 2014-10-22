@@ -10,20 +10,47 @@ if (!$link) {
 
 mysql_select_db($db);
 
-$search_sql;
+//here are the IDs of the element stored which match the conditions
+$output=Array();
 
-foreach($columns as $i)
-{
-    $search_sql .= " OR ".$i." LIKE '%".$_GET["q"]."%'";
-}
-
+//search for ID
 $result=mysql_query("SELECT * FROM ".$main_table." WHERE 
-".$id_column." LIKE '%".$_GET["q"]."%'".$search_sql);
+".$id_column." LIKE '".$_GET["q"]."%'");
 
 while($row=mysql_fetch_array($result, MYSQL_ASSOC)){
-    echo $row[$id_column].";";
+    array_push($output,$row[$id_column]);
 }
 
+//search for Name
+$result=mysql_query("SELECT * FROM ".$main_table." WHERE 
+".$name_column." LIKE '%".$_GET["q"]."%'");
+
+while($row=mysql_fetch_array($result, MYSQL_ASSOC)){
+    if(!in_array($row[$id_column],$output))
+        array_push($output,$row[$id_column]);
+}
+
+//FULLTEXT_search
+$search_sql;
+foreach($columns as $i)
+{
+    $search_sql .= ",".$i;
+}
+
+$result=mysql_query(
+"SELECT * FROM data WHERE MATCH (".$name_column.$search_sql.")
+AGAINST ('".$_GET['q']."' IN NATURAL LANGUAGE MODE)"
+);
+
+while($row=mysql_fetch_array($result, MYSQL_ASSOC)){
+    if(!in_array($row[$id_column],$output))
+        array_push($output,$row[$id_column]);
+}
+
+foreach($output as $i)
+{
+    echo $i.";";
+}
 
 mysql_close($link);
 ?>

@@ -53,6 +53,7 @@ mysql_select_db($db);
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <form class="navbar-form navbar-right" role="search">
           <div class="input-group">
+              <button class="btn btn-warning search_set">Kategory</button>
             <div class="input-group-btn">
                 <button id="searchbutton" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                 <span class="glyphicon glyphicon-search"></span>
