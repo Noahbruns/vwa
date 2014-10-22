@@ -1,1 +1,8 @@
-config.php
+*
+
+!less/*
+!js/*
+!docs/VWA/*
+!dist/*
+
+docs/VWA/config.php
