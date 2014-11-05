@@ -37,9 +37,13 @@ foreach($columns as $i)
     $search_sql .= ",".$i;
 }
 
+$search_sql = substr($search_sql,1);
+
 $result=mysql_query(
-"SELECT * FROM data WHERE MATCH (".$name_column.$search_sql.")
-AGAINST ('".$_GET['q']."' IN NATURAL LANGUAGE MODE)"
+"SELECT ".$id_column.", MATCH (".$search_sql.") AGAINST
+('".$_GET['q']."' IN NATURAL LANGUAGE MODE) AS score
+FROM data WHERE MATCH (".$search_sql.") AGAINST
+('".$_GET['q']."' IN NATURAL LANGUAGE MODE);"
 );
 
 while($row=mysql_fetch_array($result, MYSQL_ASSOC)){

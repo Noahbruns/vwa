@@ -4,6 +4,15 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
+/*
+@brand-primary:         #4cbfad;
+@brand-success:         #1e2841;
+@brand-info:            #ffc341;
+@brand-warning:         #f44800;//#ffd800;
+@brand-danger:          #d71634;
+
+@navbar-default-bg:     rgb(103, 109, 124);
+*/
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -260,12 +269,14 @@ th {
     border: 1px solid #ddd !important;
   }
 }
-@font-face {
+/*@font-face {
   font-family: 'Glyphicons Halflings';
-
-  src: url('../fonts/glyphicons-halflings-regular.eot');
-  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
-}
+  src: url('@{icon-font-path}@{icon-font-name}.eot');
+  src: url('@{icon-font-path}@{icon-font-name}.eot?#iefix') format('embedded-opentype'),
+       url('@{icon-font-path}@{icon-font-name}.woff') format('woff'),
+       url('@{icon-font-path}@{icon-font-name}.ttf') format('truetype'),
+       url('@{icon-font-path}@{icon-font-name}.svg#@{icon-font-svg-id}') format('svg');
+}*/
 .glyphicon {
   position: relative;
   top: 1px;
@@ -2934,8 +2945,8 @@ fieldset[disabled] .btn-info.active {
 }
 .btn-warning {
   color: #fff;
-  background-color: #ffd800;
-  border-color: #e6c200;
+  background-color: #00d449;
+  border-color: #00bb40;
 }
 .btn-warning:hover,
 .btn-warning:focus,
@@ -2943,8 +2954,8 @@ fieldset[disabled] .btn-info.active {
 .btn-warning.active,
 .open > .dropdown-toggle.btn-warning {
   color: #fff;
-  background-color: #ccad00;
-  border-color: #a88f00;
+  background-color: #00a137;
+  border-color: #007d2b;
 }
 .btn-warning:active,
 .btn-warning.active,
@@ -2966,11 +2977,11 @@ fieldset[disabled] .btn-warning:active,
 .btn-warning.disabled.active,
 .btn-warning[disabled].active,
 fieldset[disabled] .btn-warning.active {
-  background-color: #ffd800;
-  border-color: #e6c200;
+  background-color: #00d449;
+  border-color: #00bb40;
 }
 .btn-warning .badge {
-  color: #ffd800;
+  color: #00d449;
   background-color: #fff;
 }
 .btn-danger {
@@ -3069,7 +3080,51 @@ fieldset[disabled] .btn-link:focus {
   border-radius: 3px;
 }
 .search_set {
+  height: 26px;
+  padding: 0 5px;
+  margin-top: -webkit-calc((34px - 26px)/2);
+  margin-top:         calc((34px - 26px)/2);
   margin-right: 20px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #00d449;
+  border-color: #00bb40;
+}
+.search_set:hover,
+.search_set:focus,
+.search_set:active,
+.search_set.active,
+.open > .dropdown-toggle.search_set {
+  color: #fff;
+  background-color: #00a137;
+  border-color: #007d2b;
+}
+.search_set:active,
+.search_set.active,
+.open > .dropdown-toggle.search_set {
+  background-image: none;
+}
+.search_set.disabled,
+.search_set[disabled],
+fieldset[disabled] .search_set,
+.search_set.disabled:hover,
+.search_set[disabled]:hover,
+fieldset[disabled] .search_set:hover,
+.search_set.disabled:focus,
+.search_set[disabled]:focus,
+fieldset[disabled] .search_set:focus,
+.search_set.disabled:active,
+.search_set[disabled]:active,
+fieldset[disabled] .search_set:active,
+.search_set.disabled.active,
+.search_set[disabled].active,
+fieldset[disabled] .search_set.active {
+  background-color: #00d449;
+  border-color: #00bb40;
+}
+.search_set .badge {
+  color: #00d449;
+  background-color: #fff;
 }
 .search_set:after {
   font-family: 'Glyphicons Halflings';
@@ -4516,11 +4571,11 @@ a.label:focus {
   background-color: #31b0d5;
 }
 .label-warning {
-  background-color: #ffd800;
+  background-color: #00d449;
 }
 .label-warning[href]:hover,
 .label-warning[href]:focus {
-  background-color: #ccad00;
+  background-color: #00a137;
 }
 .label-danger {
   background-color: #d9534f;
@@ -4798,7 +4853,7 @@ a.thumbnail.active {
   background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
 }
 .progress-bar-warning {
-  background-color: #ffd800;
+  background-color: #00d449;
 }
 .progress-striped .progress-bar-warning {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
@@ -5502,7 +5557,7 @@ button.close {
 }
 @media (min-width: 768px) {
   .modal-dialog {
-    width: 600px;
+    width: 900px;
     margin: 30px auto;
   }
   .modal-content {
@@ -5510,12 +5565,12 @@ button.close {
             box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
   }
   .modal-sm {
-    width: 300px;
+    width: 500px;
   }
 }
 @media (min-width: 992px) {
   .modal-lg {
-    width: 900px;
+    width: 1200px;
   }
 }
 .tooltip {

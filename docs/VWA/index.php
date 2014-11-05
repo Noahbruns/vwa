@@ -53,7 +53,7 @@ mysql_select_db($db);
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <form class="navbar-form navbar-right" role="search">
           <div class="input-group">
-              <button class="btn btn-warning search_set">Kategory</button>
+              <button class="btn search_set">Kategory</button>
             <div class="input-group-btn">
                 <button id="searchbutton" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                 <span class="glyphicon glyphicon-search"></span>
@@ -62,6 +62,7 @@ mysql_select_db($db);
                 <ul class="dropdown-menu" role="menu" aria-labelledby="searchmenu">
                     <li role="presentation"><a role="menuitem" class="searchitem_master" tabindex="-1" href="#"><font color="#ddd">Type something to search</font></a></li>
                     <li role="presentation"><a role="menuitem" class="searchitem_normal" tabindex="-1" href="#"><font color="#ddd">Type something to search</font></a></li>
+                    <li role="presentation"><a role="menuitem" class="searchitem_count" tabindex="-1" href="#"><font color="#ddd">0</font></a></li>
                 </ul>
             </div>
           </div>
@@ -71,12 +72,30 @@ mysql_select_db($db);
 </nav>
 
 <div class="container">
-    <div class="master row">
+    <div id="element_container" class="master row">
         <?php
             include "elements.php";
         ?>
     </div>
-</div>      
+</div>
+      
+<div class="modal fade bs-example-modal-lg" id="element_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Element</h4>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Buy</button>
+      </div>
+    </div>
+  </div>
+</div>
       
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="jquery.js"></script>

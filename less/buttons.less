@@ -136,7 +136,12 @@
 //search set
 
 .search_set {
+  .button-variant(@search-set-kategory-color; @search-set-kategory-bg; @search-set-kategory-border);
   margin-right: 20px;
+  margin-top: calc((34px - @search-set-height)/2);
+  height: @search-set-height;
+  font-size: @search-set-font-size;
+  padding: 0px 5px;
 }
 
 .search_set:after {
